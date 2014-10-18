@@ -1,8 +1,3 @@
-var h5bp = require('h5bp');
-var app1 = h5bp.createServer({ root: __dirname + '/public' });
-app1.listen(9090);
-
-
 // server.js
 var express    = require('express');
 var bodyParser = require('body-parser');
@@ -38,6 +33,7 @@ app.use(vhost('test2.me', rapp));
 app.use(vhost('www.test2.me', rapp));
 
 var cors = function(req, res, next) {
+    console.log('ssss');
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 	next();
