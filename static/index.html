@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Основы JavaScript</title>
+        <link rel="stylesheet" href="//code.jquery.com/qunit/qunit-1.15.0.css">
+        <script src="//localhost:35729/livereload.js"></script>
+    </head>
+    <body>
+         <script>
+            var log = function() {
+                Array.prototype.unshift.call(arguments, '%c', 'color: green');
+                console.log.apply(console, arguments);
+            }            
+        </script>
+        <div id="qunit"></div>
+        <div id="qunit-fixture"></div>
+        <script src="//code.jquery.com/qunit/qunit-1.15.0.js"></script>
+        <script src="js/tests.js"></script>
+    </body>
+</html>
