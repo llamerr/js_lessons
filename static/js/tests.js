@@ -1,10 +1,10 @@
 //https://developer.mozilla.org/en-US/learn/javascript
 //http://www.dreamincode.net/forums/topic/109965-javascript-features-you-should-never-use-alternatives/
+//Нада ноду запускать и проверять...на глаз не получается...
 QUnit.test("структура кода", function(assert) {
     var f = function() {
         var i = 1;
-        return
-        i;
+        return i;
     }
     assert.equal(f(), 1, "Должно вернуть 1!");
 });
@@ -13,7 +13,7 @@ QUnit.test("структура кода", function(assert) {
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Values,_variables,_and_literals
 var aaa = 1;
 QUnit.test("переменные", function(assert) {
-    assert.equal(typeof foo, "undefined", "foo не объявлено");
+    assert.equal(typeof foo, undefined, "foo не объявлено");
     assert.equal(aaa, 1, "ааа объявлено");
 
     var bbb = 1;
