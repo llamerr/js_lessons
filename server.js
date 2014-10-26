@@ -26,20 +26,18 @@ router.get('/users', function(req, res) {
 rapp.use('/api', router);
 
 var app = express();
+var cors = function(req, res, next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	next();
+}
+//cors = function(req, res, next){ next() }
+app.all('*', cors);
 app.use(vhost('test1.me', rapp));
 app.use(vhost('www.test1.me', rapp));
 app.use(vhost('static.test1.me', rapp));
 app.use(vhost('test2.me', rapp));
 app.use(vhost('www.test2.me', rapp));
-
-var cors = function(req, res, next) {
-    console.log('ssss');
-	res.header("Access-Control-Allow-Origin", "*");
-	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-	next();
-}
-cors = function(req, res, next){ next() }
-app.all('*', cors);
 
 var port = process.env.PORT || 9091;
 app.listen(port);
