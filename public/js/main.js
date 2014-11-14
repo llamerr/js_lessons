@@ -1,9 +1,12 @@
 require.config({
 	baseUrl: 'js',
 	paths: {
-		jquery: 'vendor/jquery-1.10.2.min',
 		swig: 'vendor/swig.min',
-		less: 'vendor/less.min'
+		less: 'vendor/bower/less/dist/less.min',
+		jquery: 'vendor/bower/jquery/dist/jquery.min',
+		underscore: 'vendor/bower/underscore/underscore',
+		backbone: 'vendor/bower/backbone/backbone',
+		backboneLocalstorage: 'vendor/bower/backbone.localStorage/backbone.localStorage'
 	}
 });
 require(['less']);

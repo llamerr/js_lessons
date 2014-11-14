@@ -1,0 +1,24 @@
+{
+  "name": "js_lessons",
+  "version": "0.0.0",
+  "homepage": "https://github.com/llamerr/js_lessons",
+  "authors": [
+    "Alexey Lukin"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/js/vendor/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "backbone": "~1.0.0",
+    "backbone.localStorage": "~1.1.14",
+    "less": "~2.0.0",
+    "underscore": "~1.7.0"
+  }
+}
