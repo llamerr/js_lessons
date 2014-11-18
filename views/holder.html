@@ -1,7 +1,12 @@
 {{ title }}
+<input type="text" id="filter" />
 <select>
     <option disabled>Choose your beer</option>
     {% for beer in beers %}
     {% autoescape false %}{{ beer }}{% endautoescape %}
     {% endfor %}
 </select>
+<button id="prev">prev</button>
+<button id="next">next</button>
+<button id="new">new</button>
+<form></form>

@@ -1,6 +1,8 @@
 define(['jquery', 'swig'], function ($, swig) {
 	var API_URL = '//localhost:3000/api/views/';
-	var preload_list = ['test', 'holder', 'tr', 'option'];
+	var preload_list = ['holder', 'option', 'form'];
+
+	var deferred = new $.Deferred();
 
 	var TemplateManager = function(manager){
 		this.manager = manager;
@@ -30,9 +32,9 @@ define(['jquery', 'swig'], function ($, swig) {
 		[].forEach.call(arguments, function(a, i){
 			tm.add_template(preload_list[i], a[0]);
 		});
-		$(document).trigger('templates:ready');
+		deferred.resolve(tm);
 	})
 
-	return tm;
+	return deferred.promise();
 
 })

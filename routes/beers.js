@@ -19,9 +19,9 @@ beersRoute.post(function (req, res) {
 	var beer = new Beer();
 
 	// Set the beer properties that came from the POST data
-	beer.name = req.body.name;
-	beer.type = req.body.type;
-	beer.quantity = req.body.quantity;
+	beer.name = req.body.model.name;
+	beer.type = req.body.model.type;
+	beer.quantity = req.body.model.quantity;
 
 	// Save the beer and check for errors
 	beer.save(function (err) {
@@ -64,8 +64,10 @@ beerRoute.put(function (req, res) {
 		if (err)
 			res.send(err);
 
-		// Update the existing beer quantity
-		beer.quantity = req.body.quantity;
+		var model = JSON.parse(req.body.model)
+		beer.quantity = model.quantity;
+		beer.name = model.name;
+		beer.type = model.type;
 
 		// Save the beer and check for errors
 		beer.save(function (err) {

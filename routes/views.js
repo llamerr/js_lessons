@@ -16,9 +16,7 @@ viewsRoute.get(function (req, res) {
 	var filePath = path.resolve('./', viewsDir, req.params.view_id + '.html');
 	fs.readFile(filePath, function (err, data) {
 		if (err) throw err;
-		setTimeout(function(){
-			res.send(data);
-		}, 1500)
+		res.send(data);
 	});
 });
 

@@ -19,6 +19,10 @@ var fs = require('fs'),
 	path = require('path');
 var RouteDir = 'routes',
 	files = fs.readdirSync(RouteDir);
+//delay all api responses by 2 seconds
+app.use('/api/', function(req, res, next) {
+	setTimeout(next, 1000);
+});
 files.forEach(function (file) {
 	var filePath = path.resolve('./', RouteDir, file),
 		router = require(filePath);
